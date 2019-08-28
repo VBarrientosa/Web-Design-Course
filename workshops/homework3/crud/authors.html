@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Authors</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/template.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+  <section>
+    <div class="d-flex flex-column">
+      <h1>Add new author</h1>
+      <div class="form-contact-info">
+        <div class="error_msg" id="error_msg"></div>
+        <form id="author-form">
+          <input type="text" name="name" value="" placeholder="Type your Name" class="required" id="name" />
+          <input type="text" name="last_name" value="" placeholder="Type your Last name" class="required" id="lastName" />
+           <input type="number" name="age" value="" placeholder="Type your Age" class="required" id="age" />
+          <input type="button" value="Add" id="add-author-button" />
+        </form>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Authors List</h2>
+    <table class="table table-light">
+      <tbody id="authors_table">
+      </tbody>
+    </table>
+    <div class="d-flex flex-column hidden">
+      <h1>Edit author</h1>
+      <div class="form-contact-info">
+        <div class="error_msg" id="error_msg"></div>
+        <form id="author-form">
+          <input type="text" name="name" value="" placeholder="Type your Name" class="required" id="editName" />
+          <input type="text" name="last_name" value="" placeholder="Type your Last name" class="required" id="editLastName" />
+          <input type="number" name="age" value="" placeholder="Type your Age" class="required" id="editAge" />
+          <input type="hidden" name="id" value="" id="editId" />
+          <input type="button" value="Save" id="save-author-button" />
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="js/authors_database.js" type="text/javascript"></script>
+  <script src="js/authors_application.js" type="text/javascript"></script>
+
+  <script>
+    loadTableData('authors');
+    bindEvents();
+  </script>
+</body>
+
+</html>
